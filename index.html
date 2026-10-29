@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T05: Multi-Chart Webpage - TV Energy & Spot Prices Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- D3.js v7 CDN -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">
+          <h1>Volt Energy Analytics</h1>
+          <p>T05: Multi-Chart Webpage &middot; COS30045 Data Visualisation</p>
+        </div>
+      </div>
+      <div class="header-badge">
+        Interactive D3 v7 Dashboard
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Introductory Section -->
+    <section class="intro-section">
+      <h2>Australian Television Energy Consumption & Wholesale Electricity Prices</h2>
+      <p>
+        This dashboard presents a comparative visual analysis of appliance energy efficiency across modern television technologies 
+        (LCD, LED, and OLED), alongside historical Australian National Electricity Market (NEM) spot power prices from 1998 to 2024.
+      </p>
+      <div class="stat-pills">
+        <div class="stat-pill">
+          <span>📺 Models Analyzed:</span> <strong>588 Televisions</strong>
+        </div>
+        <div class="stat-pill">
+          <span>🏷️ Tech Covered:</span> <strong>LCD, LED, OLED</strong>
+        </div>
+        <div class="stat-pill">
+          <span>📅 Electricity Spot Price History:</span> <strong>1998 &ndash; 2024</strong>
+        </div>
+        <div class="stat-pill">
+          <span>💡 Interactive Features:</span> <strong>Tooltips &middot; Legend Filtering &middot; Responsive Scaling</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-Chart Grid (2x2 Dashboard Layout) -->
+    <div class="charts-grid">
+
+      <!-- Chart 1: Scatter Plot -->
+      <section class="chart-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h3>1. Energy Consumption vs. Star Rating</h3>
+            <p>Evaluating annual power draw (kWh/yr) against official energy star ratings.</p>
+          </div>
+          <span class="chart-tag">Scatter Plot</span>
+        </div>
+        <div class="chart-wrapper" id="scatter-plot"></div>
+        <div class="chart-legend" id="scatter-legend"></div>
+      </section>
+
+      <!-- Chart 2: Donut Chart -->
+      <section class="chart-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h3>2. Energy by Screen Technology (All Sizes)</h3>
+            <p>Mean energy consumption across all screen sizes combined.</p>
+          </div>
+          <span class="chart-tag">Donut Chart</span>
+        </div>
+        <div class="chart-wrapper" id="donut-chart"></div>
+        <div class="chart-legend" id="donut-legend"></div>
+      </section>
+
+      <!-- Chart 3: Bar Chart -->
+      <section class="chart-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h3>3. Energy by Technology (55-Inch TVs Only)</h3>
+            <p>Direct benchmark comparing screen technologies on the popular 55" form factor.</p>
+          </div>
+          <span class="chart-tag">Bar Chart</span>
+        </div>
+        <div class="chart-wrapper" id="bar-chart"></div>
+        <div class="chart-legend" id="bar-legend"></div>
+      </section>
+
+      <!-- Chart 4: Line Chart -->
+      <section class="chart-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h3>4. Australian Spot Power Prices (1998 &ndash; 2024)</h3>
+            <p>Wholesale electricity prices ($/MWh) across NEM states and National Average.</p>
+          </div>
+          <span class="chart-tag">Line Chart</span>
+        </div>
+        <div class="chart-wrapper" id="line-chart"></div>
+        <div class="chart-legend" id="line-legend"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Tooltip for D3 hover events -->
+  <div id="d3-global-tooltip" class="d3-tooltip"></div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Muhammad Ishmael 'Aqib &middot; COS30045 Data Visualisation &middot; Swinburne University of Technology</p>
+    <p>Built with D3.js v7 &middot; Responsive Multi-Chart Architecture</p>
+  </footer>
+
+  <!-- Individual chart scripts (One JS file per chart) -->
+  <script src="scatter-plot.js"></script>
+  <script src="donut-chart.js"></script>
+  <script src="bar-chart.js"></script>
+  <script src="line-chart.js"></script>
+
+</body>
+</html>
